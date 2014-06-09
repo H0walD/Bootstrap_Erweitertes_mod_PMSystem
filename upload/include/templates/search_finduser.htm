@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="include/bootstrap/font-awesome/css/font-awesome.min.css">
+<script language="javascript" type="text/javascript">
+<!--
+
+function set_user_name ()
+{
+	var cb = document.getElementsByName('names[]');
+	opener.document.form.name.value = '';
+	for (var i = 0;i<cb.length;i++) {
+		if (cb[i].checked) {
+			if (opener.document.form.name.value != '') {
+				opener.document.form.name.value += ', ' + cb[i].value;
+			} else {
+				opener.document.form.name.value = cb[i].value;
+			}
+		}
+	}
+	
+	opener.focus();
+	window.close();
+	opener.changeview();
+}
+
+function CheckAll ()
+{
+	if(document.form.ALL){
+		var c = document.form.ALL.checked;
+	}
+	for (var i=0;i<document.form.elements.length;i++){
+		var e = document.form.elements[i];
+		if(e.name != 'ALL') {
+			if((e.checked!=c)&&(e.type=="checkbox")){
+			 e.click();
+			 e.checked = c;
+			}
+		}
+	}
+}
+
+function get_empf()
+{
+	var empf = opener.document.form.name.value;
+	var erg  = empf.search(/,/);
+	var cb = document.getElementsByName('names[]');
+	if (erg != -1) {
+		var n = empf.split(", ");
+	} else {
+		var n = empf.split();
+	}
+	for (var i=0;i<n.length;i++){
+		for (var j=0;j<cb.length;j++){
+			if (cb[j].value === n[i]) {
+				cb[j].checked = true;
+				break;
+			}
+		}
+	}
+	for (k=0;k<cb.length;k++){
+		if (cb[k].checked) {
+			document.getElementById('all').checked=true;
+		} else {
+			document.getElementById('all').checked=false;
+			break;
+		}
+	}
+}
+
+//-->
+</script>
+<form action="index.php?search-finduser{add}" method="POST" name="form">
+    <body onload="get_empf();">
+        <br style="clear-both">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="panel panel-default">
+		<div class="panel-heading">
+                    <div class="pull-left"><h4>{_lang_setreceiver}</h4></div>
+                    <br style="clear-both">
+                    <br style="clear-both">
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>Alle User als {_lang_receiver}</td>
+                            <td><input name="ALL" id="all" type="checkbox" value="CHECK ALL" onClick="CheckAll();" style="float: right;"></td>
+                        </tr>
+                        <tr>
+                            <td>{_lang_receiver}</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+{EXPLODE}
+                    <tbody>
+                        <tr>
+                            <td>{empf}</td>
+                            <td ><input type="checkbox" name="names[]" value="{empf}" style="float: right;"></td>
+                        </tr>
+{EXPLODE}
+                        <tr>
+                            <td></td>
+                            <td><a class="btn btn-success" value="Set" onClick="set_user_name()" style="float: right;">Empfänger eintragen&nbsp;<i class="fa fa-check-square-o"></i></a></td>
+                        </tr>
+{EXPLODE}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <br style="clear-both">
+    </body>
+</form>
