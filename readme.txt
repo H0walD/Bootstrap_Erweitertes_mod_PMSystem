@@ -24,7 +24,11 @@ Installation:
 ° Alle Dateien im Ordner Upload in ihrer Ordnerstruktur hochladen
 ° Im Normalfall können alle Dateien überschrieben werden. 
 
+<<<<<<< HEAD
 Ersetzt:
+=======
+Ersezt:
+>>>>>>> 9868cdb179cb6c1cbee204c5ad10d0eeae6e759d
 -------------
   - include/contents/forum/privmsg.php
   - include/templates/search_finduser.htm
