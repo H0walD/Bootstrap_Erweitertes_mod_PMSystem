@@ -5,14 +5,18 @@ Beschreibung:
 Das Modul Funtioniert nur mit PM Erweiterung von Outi77 und Bootstrap Design von Maretz:
 	° Downloadlink: http://www.ilch.de/downloads-show-1696.html
 
+BBCode v. 2.0 muss natürlich auch Installiert sein.(sofern noch nicht installiert)
+	° Downloadlink: http://www.ilch.de/downloads-show-1742.html 
+
 Angepasst an Bootstrap:
 ----------
-° von "HowalD & Balthazar3k"
+° von "H0walD & Balthazar3k"
 ° auf Basis von IlchClan 1.1 P (funktioniert wahrscheinlich auch mit älteren Versionen)
 
 Voraussetzungen:
 ----------------
-° Aktuelle Version PM Erweiterung von Outi77 muß installiert sein. 
+° Aktuelle Version PM Erweiterung von Outi77 muß installiert sein.
+° Aktuelle Version BBCode v. 2.0 muss natürlich auch Installiert sein.(sofern noch nicht installiert)
 
 Installation:
 -------------
@@ -20,7 +24,7 @@ Installation:
 ° Alle Dateien im Ordner Upload in ihrer Ordnerstruktur hochladen
 ° Im Normalfall können alle Dateien überschrieben werden. 
 
-Ersetz:
+Ersezt:
 -------------
   - include/contents/forum/privmsg.php
   - include/templates/search_finduser.htm
@@ -34,7 +38,7 @@ Ersetz:
 
 Bekannte Einschränkungen / Fehler:
 ----------------------------------
-*ggf. ist die breitere PM Übersicht zu groß für "kleine" Designs
+*keine
 
 Haftungsausschluss:
 -------------------
